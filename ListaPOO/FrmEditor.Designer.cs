@@ -108,6 +108,7 @@
             // maskedtxtTel2
             // 
             maskedtxtTel2.Location = new Point(149, 153);
+            maskedtxtTel2.Mask = "(00) 00000-0000";
             maskedtxtTel2.Name = "maskedtxtTel2";
             maskedtxtTel2.Size = new Size(100, 23);
             maskedtxtTel2.TabIndex = 8;
@@ -120,6 +121,7 @@
             btSalvar.TabIndex = 9;
             btSalvar.Text = "Salvar";
             btSalvar.UseVisualStyleBackColor = true;
+            btSalvar.Click += btSalvar_Click;
             // 
             // FrmEditor
             // 

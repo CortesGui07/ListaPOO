@@ -28,16 +28,14 @@
         /// </summary>
         private void InitializeComponent()
         {
+            components = new System.ComponentModel.Container();
             txtBusca = new TextBox();
             btBusca = new Button();
             btCadastrar = new Button();
             btEditar = new Button();
             btRemover = new Button();
             dgvLista = new DataGridView();
-            id = new DataGridViewTextBoxColumn();
-            nome = new DataGridViewTextBoxColumn();
-            telefone = new DataGridViewTextBoxColumn();
-            email = new DataGridViewTextBoxColumn();
+            tmrUpdate = new System.Windows.Forms.Timer(components);
             ((System.ComponentModel.ISupportInitialize)dgvLista).BeginInit();
             SuspendLayout();
             // 
@@ -56,6 +54,7 @@
             btBusca.TabIndex = 1;
             btBusca.Text = "Buscar";
             btBusca.UseVisualStyleBackColor = true;
+            btBusca.Click += btBusca_Click;
             // 
             // btCadastrar
             // 
@@ -85,36 +84,22 @@
             btRemover.TabIndex = 4;
             btRemover.Text = "Remover";
             btRemover.UseVisualStyleBackColor = true;
+            btRemover.Click += btRemover_Click;
             // 
             // dgvLista
             // 
             dgvLista.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dgvLista.Columns.AddRange(new DataGridViewColumn[] { id, nome, telefone, email });
             dgvLista.Location = new Point(88, 84);
             dgvLista.Name = "dgvLista";
             dgvLista.Size = new Size(608, 252);
             dgvLista.TabIndex = 5;
             dgvLista.CellClick += dgvLista_CellClick;
             // 
-            // id
+            // tmrUpdate
             // 
-            id.HeaderText = "ID";
-            id.Name = "id";
-            // 
-            // nome
-            // 
-            nome.HeaderText = "Nome";
-            nome.Name = "nome";
-            // 
-            // telefone
-            // 
-            telefone.HeaderText = "Telefone";
-            telefone.Name = "telefone";
-            // 
-            // email
-            // 
-            email.HeaderText = "E-Mail";
-            email.Name = "email";
+            tmrUpdate.Enabled = true;
+            tmrUpdate.Interval = 1000;
+            tmrUpdate.Tick += timer1_Tick;
             // 
             // Form1
             // 
@@ -142,9 +127,6 @@
         private Button btEditar;
         private Button btRemover;
         private DataGridView dgvLista;
-        private DataGridViewTextBoxColumn id;
-        private DataGridViewTextBoxColumn nome;
-        private DataGridViewTextBoxColumn telefone;
-        private DataGridViewTextBoxColumn email;
+        private System.Windows.Forms.Timer tmrUpdate;
     }
 }
